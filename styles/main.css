@@ -1,0 +1,458 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    padding: 0px 75px;
+    background-color: #fffdf8;
+}
+
+p {
+    font-family: "Montserrat", sans-serif;
+    line-height: 1.5;
+
+}
+
+h1 {
+    font-family: "Betania Patmos", cursive;
+    font-weight: 200;
+}
+
+/* 
+FONTS:
+font-family: "Betania Patmos", cursive;
+font-family: "Montserrat", sans-serif;
+*/
+
+/*
+This is the css for the portfolio home page
+This is the header section. It contains the side navigation bar */
+
+header {
+    display: flex;
+    width: 15%;
+    height: 100vh;
+    padding: 0px;
+    position: relative;
+    z-index: 100;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    padding: 65px 20px;
+    gap: 30px;
+    width: 100%;
+    position: sticky;
+    top: 0;
+}
+
+.nav-links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.nav-social-icons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    fill: #393939;
+}
+
+.nav-social-icons svg:hover {
+    fill: #e98f5f;
+}
+
+.nav-links a {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    text-decoration: none;
+    color: #393939;
+    position: relative;
+    display: inline-block;
+}
+
+.nav-links a::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: #e98f5f;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease-out;
+}
+
+.nav-links a.active::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.nav-links a:hover::after {
+    transform: scaleX(1);
+}
+
+.instagram, .linkedin, .behance {
+    width: 25px;
+    height: 25px;
+}
+
+.hamburger-menu, .mobile-overlay {
+    display: none;
+}
+
+.index-content-container {
+    width:100%;
+    display: flex;
+}
+
+.hero-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+    height: 100vh;
+    padding: 65px 40px;
+    gap: 25px;
+}
+
+.hero-section-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.hero-section h1{
+    font-size: clamp(2.5rem, 8vw, 80px);
+    line-height: 1.1;
+    white-space: nowrap;
+}
+
+.split {
+    opacity: 0;
+    text-align:left;
+    color: rgb(14, 16, 15);
+    font-size: clamp(2rem, 5rem, 3vw);
+    letter-spacing: 0.05rem;
+    will-change: transform;
+    color: #0e100f;
+  }
+  
+  .split * {
+    will-change: transform;
+  }
+
+.hero-section p {
+    font-family: "Montserrat", sans-serif;
+    letter-spacing: 0.5px;
+    line-height: 3;
+}
+
+.cta-button {
+    width: fit-content;
+    border-radius: 100px;
+    font-family: "Monserrat", sans-serif;
+    color: #fffdf8;
+    letter-spacing: 1px;
+    border: none;
+    background-color: #e98f5f;
+    padding: 10px 30px;
+    cursor: pointer;
+}
+
+.personal-info-section {
+    display: flex;
+    flex-direction: column;
+    width:50%;
+    height: 100vh;
+    padding: 65px 40px;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    scrollbar-width: none;
+}
+
+.divider {
+    border: 0.25px solid #393939;
+}
+
+.about-section p {
+    line-height: 1.5;
+}
+
+.about-section, .skills-section, .contact-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100dvh;
+    scroll-snap-align: start;
+    flex-shrink: 0;
+}
+
+.contact-section h1 {
+    font-size: 28px;
+}
+
+.about-title h1, .skills-title h1 {
+    font-size: 28px;
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 50px;
+    right: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    color: #e98f5f;
+    font-family: "Betania Patmos", cursive;
+    font-size: 16px;
+    letter-spacing: 2px;
+}
+
+.scroll-indicator span:first-child {
+    writing-mode: vertical-rl;
+}
+
+.scroll-indicator.at-skills {
+    flex-direction: column-reverse;
+}
+
+.skills-tags, .tools-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tag, .project-tag {
+    border: 0.5px solid #393939;
+    background-color: #fffdf8;
+    padding: 5px 20px;
+    border-radius: 50px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+}
+
+.project-tag {
+    font-size: 14px;
+}
+
+.skills-title h2{
+    font-family: "Montserrat", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 2.5;
+}
+
+.profile-img {
+    width: 80%;
+    border-radius: 20px;
+}
+
+.contact-section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.social-icons {
+    display: flex;
+    gap: 10px;
+    fill:#393939;
+}
+
+/*This is the CSS for the projects page*/
+
+.content-container {
+    width: 100%;
+    height: 100vh;
+    padding: 65px 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    overflow-y: auto;
+    scrollbar-width: none;
+}
+
+.content-container h1 {
+    font-size: 42px;
+}
+
+.category-section {
+    display: flex;
+    justify-content: left;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.category-tag {
+    width:fit-content;
+    padding: 7px 20px;
+    border: 0.75px solid #393939;
+    color: #393939;
+    background-color: #fffdf8;
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.category-tag.active {
+    background-color: #e98f5f;
+    color: #fffdf8;
+    border: none;
+}
+
+.project-thumbnail-grid, .presentation-grid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px 40px;
+    padding: 0px 0px 50px 0px;
+}
+
+.presentation-grid {
+    padding: 0px;
+}
+
+.project-card {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.thumbnail {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.project-description h2 {
+    font-family: "Montserrat", san-serif;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.project-description p {
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.category-dropdown {
+    display: none;
+}
+
+
+
+
+/*This is the CSS for all the project pages*/
+.project-description-container {
+    display: flex;
+    gap: 50px;
+}
+
+.summary {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.project-information {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 15px;
+    width: 50%;
+}
+
+.project-information h2, .summary h2 {
+    font-family: "Montserrat", san-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.summary p {
+    font-family: "Montserrat", san-serif;
+    font-weight: 300;
+    font-size: 16px;
+}
+
+.project-information p {
+    font-family: "Montserrat", san-serif;
+    font-weight: 300;
+    font-size: 14px;
+}
+
+.tools {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.project-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.project-content img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.prev-next-project {
+    /* border: 1px solid red; */
+    padding: 0px 0px 65px 0px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.prev-project, .next-project {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.next-project a, .prev-project a{
+    text-decoration: none;
+    font-family: "Montserrat", san-serif;
+    font-size: 18px;
+    color: #e98f5f;
+}
+
+.next, .prev {
+    display: flex;
+    gap: 10px;
+}
+
+.next p {
+    text-align: right;
+}
+
+.next img, .prev img {
+    width: 18px;
+}
+
+.matchbox {
+    display: flex;
+    width: 100%;
+    gap: 20px;
+}
+
+.matchbox img {
+    flex: 1 1 0;
+    min-width: 0;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
